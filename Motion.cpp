@@ -1,22 +1,21 @@
 #include "Motion.h"
 
-Motion::Motion(int int_id, int int_minDistance, int int_maxDistance) {
-	// TODO - implement Motion::Motion
-	throw "Not yet implemented";
+Motion::Motion(int id, int minDistance, int maxDistance) {
+    //What to do with the id?
+    this->maxDistance = maxDistance;
+    this->minDistance = minDistance;
 }
 
-void Motion::getMinDistance() {
-	// TODO - implement Motion::getMinDistance
-	throw "Not yet implemented";
+int Motion::getMinDistance() {
+    return maxDistance;
 }
 
 void Motion::setMinDistance(int minDistance) {
 	this->minDistance = minDistance;
 }
 
-void Motion::getMaxDistance() {
-	// TODO - implement Motion::getMaxDistance
-	throw "Not yet implemented";
+int Motion::getMaxDistance() {
+    return minDistance;
 }
 
 void Motion::setMaxDistance(int maxDistance) {

@@ -8,7 +8,7 @@ class Gas : public Sensor {
 public:
 	Gas(int int_id, int int_threshold);
 
-	void getTreshold();
+    int getTreshold();
 	void setTreshold(int treshold);
 
 private:

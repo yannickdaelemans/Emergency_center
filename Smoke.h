@@ -7,9 +7,9 @@ class Smoke : public Sensor {
 
 public:
 
-	Smoke(int int_id, int int_sensitivity);
+    Smoke(int id, int sensitivity);
 
-	void getSensitivity();
+    int getSensitivity();
 	void setSensitivity(int sensitivity);
 
 private:

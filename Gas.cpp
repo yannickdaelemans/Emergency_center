@@ -1,13 +1,11 @@
 #include "Gas.h"
 
-Gas::Gas(int int_id, int int_threshold) {
-	// TODO - implement Gas::Gas
-	throw "Not yet implemented";
+Gas::Gas(int id, int treshold) {
+    this->treshold = treshold;
 }
 
-void Gas::getTreshold() {
-	// TODO - implement Gas::getTreshold
-	throw "Not yet implemented";
+int Gas::getTreshold() {
+    return treshold;
 }
 
 void Gas::setTreshold(int treshold) {
