@@ -1,13 +1,10 @@
 #include "Sensor.h"
 
-Sensor::Sensor(int int_id, int enum_type) {
-	// TODO - implement Sensor::Sensor
-	throw "Not yet implemented";
-}
+using namespace std;
 
-Sensor::Sensor() {
-    // TODO - implement Sensor::Sensor
-    throw "Not yet implemented";
+Sensor::Sensor(int id) {
+    this->id = id;
+    activated = false;
 }
 
 int Sensor::getId() {
@@ -19,13 +16,11 @@ void Sensor::setId(int newId) {
 }
 
 std::vector<Action*> Sensor::getActions() {
-	// TODO - implement Sensor::getActions
-	throw "Not yet implemented";
+    return actions;
 }
 
 void Sensor::setActions(std::vector<Action*> actions) {
-	// TODO - implement Sensor::setActions
-	throw "Not yet implemented";
+    this->actions = actions;
 }
 
 std::string Sensor::getVendor() {
@@ -42,21 +37,31 @@ void Sensor::removeComponent(Component* toBeRemoved) {
 }
 
 void Sensor::test() {
-	// TODO - implement Sensor::test
-	throw "Not yet implemented";
+    cout << "Testing the Sensor now " << endl;
 }
 
 void Sensor::activate() {
-	// TODO - implement Sensor::activate
-	throw "Not yet implemented";
+    if (!activated){
+        activated = true;
+        cout << "Sensor is getting activated" << endl;
+    }
+    else{
+        cout << "The sensor was already activated" << endl;
+    }
+
 }
 
 void Sensor::deactivate() {
-	// TODO - implement Sensor::deactivate
-	throw "Not yet implemented";
+    if (activated){
+        activated = false;
+        cout << "Sensor is getting deactivated" << endl;
+    }
+    else{
+        cout << "The sensor was already deactivated" << endl;
+    }
 }
 
 std::string Sensor::getInfo() {
-	// TODO - implement Sensor::getInfo
-	throw "Not yet implemented";
+    cout << "Infor about the Sensor" << endl;
+    return "10";
 }

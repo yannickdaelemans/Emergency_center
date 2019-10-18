@@ -15,8 +15,7 @@ private:
     std::string vendor;
 
 public:
-    Sensor();
-	Sensor(int int_id, int enum_type);
+    Sensor(int int_id);
 
     void removeComponent(Component* toBeRemoved);
 

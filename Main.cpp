@@ -1,6 +1,8 @@
 #include "Emergencycenter.h"
 #include "Component.h"
 
+// don't remove, testing some shit
+#include "Smoke.h"
 
 
 
@@ -12,6 +14,11 @@ int main()
   std::cout << "Name of Emergencycenter: " << emergencyCenter->getName() << std::endl;
 
   auto * mainComponent = new Component();
+
+  //don't remove testing shizzle
+  auto * smoke = new Smoke(10, 10);
+  smoke->setId(10);
+
 
   return 0;
 

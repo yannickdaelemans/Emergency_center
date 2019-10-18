@@ -1,7 +1,6 @@
 #include "Motion.h"
 
-Motion::Motion(int id, int minDistance, int maxDistance) {
-    //What to do with the id?
+Motion::Motion(int id, int minDistance, int maxDistance):Sensor(id) {
     this->maxDistance = maxDistance;
     this->minDistance = minDistance;
 }
