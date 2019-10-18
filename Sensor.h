@@ -15,7 +15,7 @@ private:
     std::string vendor;
 
 public:
-    Sensor(int int_id);
+    Sensor(int id);
 
     void removeComponent(Component* toBeRemoved);
 

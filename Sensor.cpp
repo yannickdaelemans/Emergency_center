@@ -32,8 +32,14 @@ void Sensor::setVendor(std::string newVendor) {
 }
 
 void Sensor::removeComponent(Component* toBeRemoved) {
-	// TODO - implement Sensor::removeComponent
-	throw "Not yet implemented";
+    //don't think this is all that good
+    if(toBeRemoved == nullptr){
+        delete toBeRemoved;
+        toBeRemoved = nullptr;
+    }
+    else {
+        cout << "Can not delete this, it has already been deleted." << endl;
+    }
 }
 
 void Sensor::test() {
@@ -62,6 +68,6 @@ void Sensor::deactivate() {
 }
 
 std::string Sensor::getInfo() {
-    cout << "Infor about the Sensor" << endl;
+    cout << "Info about the Sensor" << endl;
     return "10";
 }
