@@ -7,7 +7,7 @@ class Evacuation : public Action {
 
 
 public:
-	void startEvacuation();
+    virtual void acting() override;
 };
 
 #endif

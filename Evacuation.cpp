@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-void Evacuation::startEvacuation() {
+void Evacuation::acting() {
     // This method calls for the start of an evacuation
     std::cout << "Evacuate the premise" << std::endl;
 }

@@ -7,7 +7,7 @@ class Fire_brigade : public Action {
 
 
 public:
-	void CallFireBrigade();
+    virtual void acting() override;
 };
 
 #endif

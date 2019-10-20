@@ -31,7 +31,7 @@ public:
     std::vector<Action*> getActions();
     int getId();
     std::string getVendor();
-    std::string getInfo();
+    void getInfo();
 
 
 };
