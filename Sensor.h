@@ -25,7 +25,7 @@ public:
 
 
     void setId(int id);
-    void setActions(std::vector<Action*> actions);
+    void setActions(std::vector<Action*> extraActions);
     void setVendor(std::string vendor);
 
     std::vector<Action*> getActions();

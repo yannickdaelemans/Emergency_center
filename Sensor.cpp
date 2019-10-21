@@ -25,8 +25,10 @@ std::vector<Action*> Sensor::getActions() {
     return actions;
 }
 
-void Sensor::setActions(std::vector<Action*> actions) {
-    this->actions = actions;
+void Sensor::setActions(std::vector<Action*> extraActions) {
+    for (size_t i = 0; i < extraActions.size(); i++){
+        actions.push_back(extraActions[i]);
+    }
 }
 
 std::string Sensor::getVendor() {
