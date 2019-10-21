@@ -36,8 +36,7 @@ void Component::deactivate() {
 }
 
 void Component::getInfo() {
-	// TODO - implement Component::getInfo
-	throw "Not yet implemented";
+
 }
 
 Component* Component::getParent(){

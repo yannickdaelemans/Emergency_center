@@ -1,5 +1,6 @@
 #include "Emergencycenter.h"
 #include "Component.h"
+#include "Composite.h"
 
 // don't remove, testing some shit
 #include "Smoke.h"
@@ -17,7 +18,7 @@ int main()
       emergencyCenter->setName("Test");
       std::cout << "Name of Emergencycenter: " << emergencyCenter->getName() << std::endl;
 
-      auto * mainComposite = new Component();
+      auto * mainComposite = new Composite("Main");
       emergencyCenter->setMainComposite(mainComposite);
 
       auto * smokesensor = new Smoke(10, 10);

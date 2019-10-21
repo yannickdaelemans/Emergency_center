@@ -47,8 +47,7 @@ void Composite::deactivate() {
 }
 
 void Composite::getInfo() {
-    std::cout << "Info about the Composite:" << std::endl;
-    std::cout << "location: "<< this->location << std::endl;
+    std::cout << "Info about the composite at location:" << this->location << std::endl;
     std::cout << "Children: "<< std::endl;
     for (Component* child : children){
         child->getInfo();
