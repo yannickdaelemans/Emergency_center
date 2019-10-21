@@ -13,12 +13,23 @@ void Composite::setLocation(std::string newLocation) {
 }
 
 std::vector<Component*> Composite::getChildren() {
-	// TODO - implement Composite::getChildren
-	throw "Not yet implemented";
+    return this->children;
 }
 
 void Composite::setChild(Component* child) {
     children.push_back(child);
+}
+
+void Composite::removeChild(Component* toBeRemovedChild){
+    for (Component* child : children){
+        int i=0;
+        if(child == toBeRemovedChild){
+            children.erase(children.begin()+i);
+            break;
+        }else {
+            i++;
+        }
+    }
 }
 
 void Composite::addComponent(Component* toBeAdded) {
@@ -26,9 +37,13 @@ void Composite::addComponent(Component* toBeAdded) {
     this->setChild(toBeAdded);
 }
 
-void Composite::removeComponent(Component* toBeRemoved) {
-	// TODO - implement Composite::removeComponent
-	throw "Not yet implemented";
+void Composite::removeComponent() {
+    for (Component* child : children){
+        child->removeComponent();
+        std::cout << "removing child" << std::endl;
+    }
+    parent->removeChild(this);
+    this->~Composite();
 }
 
 void Composite::test() {

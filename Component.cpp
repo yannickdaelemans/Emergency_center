@@ -12,13 +12,9 @@ Component::~Component(){
     std::cout << "destructing component" << std::endl;
 }
 
-void Component::addComponent(Component* toBeAdded) {
+void Component::addComponent(Component* toBeAdded) {}
 
-}
-
-void Component::removeComponent(Component* toBeRemoved) {
-    delete toBeRemoved;
-}
+void Component::removeComponent() {}
 
 void Component::test() {
 	// TODO - implement Component::test
@@ -35,17 +31,14 @@ void Component::deactivate() {
 	throw "Not yet implemented";
 }
 
-void Component::getInfo() {
+void Component::getInfo() {}
 
-}
+Component* Component::getParent(){}
 
-Component* Component::getParent(){
+void Component::setParent(Component* parent){}
 
-}
+void Component::removeChild(Component* child){}
 
-void Component::setParent(Component* parent){
-
-}
 
 /*
 std::ostream& Component::operator<<(std::ostream& os, Component& component) {

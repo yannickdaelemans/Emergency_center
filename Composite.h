@@ -3,6 +3,8 @@
 
 #include <string>
 #include <vector>
+#include <typeinfo>
+
 #include "Component.h"
 
 class Composite : public Component {
@@ -10,23 +12,24 @@ class Composite : public Component {
 public:
     Composite(const std::string & location);
 
-    void addComponent(Component* toBeAdded);
-    void removeComponent(Component* toBeRemoved);
+    void addComponent(Component* toBeAdded) override;
+    void removeComponent() override;
 
-	void test();
+    void test() override;
 
-	void activate();
-	void deactivate();
+    void activate() override;
+    void deactivate() override;
 
     void setChild(Component* child);
     void setLocation(std::string location);
+    void setParent(Component* parent) override;
 
-    Component* getParent();
-    void setParent(Component* parent);
-
+    Component* getParent()override;
     std::vector<Component*> getChildren();
     std::string getLocation();
-	void getInfo();
+    void getInfo() override;
+
+    void removeChild(Component* child);
 
 private:
     std::string location;

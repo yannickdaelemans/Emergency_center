@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <memory>
 
 #include "Component.h"
 
@@ -16,7 +17,6 @@ class Emergencycenter
         ~Emergencycenter();
 
         void addComponent(Component* addedTo, Component* toBeAdded);
-        void removeComponent(Component* removeFrom, Component* toBeRemoved);
 
         void test(Component* Component);
         void activate(Component* Component);

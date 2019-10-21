@@ -43,15 +43,16 @@ void Sensor::setVendor(std::string newVendor) {
     this->vendor = newVendor;
 }
 
-void Sensor::removeComponent(Component* toBeRemoved) {
+void Sensor::removeComponent() {
     //don't think this is all that good
-    if(toBeRemoved != nullptr){
-        delete toBeRemoved;
-        toBeRemoved = nullptr;
+    /*
+    if(this != nullptr){
+        delete this;
     }
     else {
         cout << "Can not delete this, it has already been deleted." << endl;
-    }
+    }*/
+    this->~Sensor();
 }
 
 void Sensor::test() {
@@ -101,3 +102,6 @@ Component* Sensor::getParent(){
 void Sensor::setParent(Component* newParent){
     this->parent = newParent;
 }
+
+void Sensor::removeChild(Component* child){}
+

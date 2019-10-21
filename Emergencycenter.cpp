@@ -8,6 +8,10 @@ Emergencycenter::Emergencycenter() {
     std::cout << "new emergencycenter created" << std::endl;
 }
 
+Emergencycenter::~Emergencycenter(){
+    std::cout << "deleted emergencycenter" << std::endl;
+}
+
 std::string Emergencycenter::getName() {
 	return this->name;
 }
@@ -18,11 +22,6 @@ void Emergencycenter::setName(std::string newName) {
 
 void Emergencycenter::addComponent(Component* addedTo, Component* toBeAdded) {
     addedTo->addComponent(toBeAdded);
-}
-
-void Emergencycenter::removeComponent(Component* removeFrom, Component* toBeRemoved) {
-	// TODO - implement Emergency center::removeComponent
-	throw "Not yet implemented";
 }
 
 void Emergencycenter::test(Component* Component) {

@@ -9,7 +9,7 @@
 class Sensor : public Component {
 
 private:
-	int id;
+    int id;
     std::vector<Action*> actions;
     bool activated;
     std::string vendor;
@@ -17,7 +17,7 @@ private:
 public:
     Sensor(int id);
 
-    void removeComponent(Component* toBeRemoved) override;
+    void removeComponent() override;
 
     void test() override;
     void activate() override;
@@ -35,6 +35,8 @@ public:
     std::string getVendor();
     void getInfo() override;
     Component * getParent() override;
+
+    void removeChild(Component* child) override;
 
 };
 

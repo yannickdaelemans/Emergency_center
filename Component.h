@@ -14,7 +14,8 @@ public:
     Component(Component* newParent);
 
     virtual void addComponent(Component* toBeAdded);
-    virtual void removeComponent(Component* toBeRemoved);
+    virtual void removeComponent();
+    virtual void removeChild(Component* child);
 
     virtual void test();
     virtual void activate();
@@ -25,6 +26,7 @@ public:
     virtual Component* getParent();
     virtual void setParent(Component* parent);
     //std::ostream& operator<<(std::ostream& os, Component& component);
+
 
     Component* parent;
 };

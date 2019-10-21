@@ -6,24 +6,34 @@
 #include "Smoke.h"
 #include "Action.h"
 #include "Police.h"
-#include <iostream>
+#include "Motion.h"
 
+#include <iostream>
+#include <memory>
 
 
 int main()
   {
     try{
-      auto * emergencyCenter = new Emergencycenter();
-
-      emergencyCenter->setName("Test");
-      std::cout << "Name of Emergencycenter: " << emergencyCenter->getName() << std::endl;
+      auto emergencyCenter = std::make_unique<Emergencycenter>("Name Emergencycenter");
 
       auto * mainComposite = new Composite("Main");
       emergencyCenter->setMainComposite(mainComposite);
 
-      auto * smokesensor = new Smoke(10, 10);
+      auto * smokesensor = new Smoke(9, 10);
       emergencyCenter->addComponent(mainComposite,smokesensor);
+      auto * smokesensor1 = new Smoke(10, 10);
+      emergencyCenter->addComponent(mainComposite,smokesensor1);
+      auto * smokesensor2 = new Smoke(11, 10);
+      emergencyCenter->addComponent(mainComposite,smokesensor2);
 
+      auto * groupT = new Composite("group T");
+      emergencyCenter->addComponent(mainComposite,groupT);
+      auto * motionsensor = new Motion(1, 2, 20);
+      emergencyCenter->addComponent(groupT, motionsensor);
+
+      emergencyCenter->getInfo();
+      groupT->removeComponent();
       emergencyCenter->getInfo();
 
 
