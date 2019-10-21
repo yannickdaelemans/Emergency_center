@@ -7,6 +7,7 @@ class Police : public Action {
 
 
 public:
+    Police();
     virtual void acting() override;
 };
 

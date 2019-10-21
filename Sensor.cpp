@@ -25,10 +25,14 @@ std::vector<Action*> Sensor::getActions() {
     return actions;
 }
 
-void Sensor::setActions(std::vector<Action*> extraActions) {
+void Sensor::setListActions(std::vector<Action*> extraActions) {
     for (size_t i = 0; i < extraActions.size(); i++){
         actions.push_back(extraActions[i]);
     }
+}
+
+void Sensor::setExtraAction (Action* action){
+    actions.push_back(action);
 }
 
 std::string Sensor::getVendor() {
@@ -41,7 +45,7 @@ void Sensor::setVendor(std::string newVendor) {
 
 void Sensor::removeComponent(Component* toBeRemoved) {
     //don't think this is all that good
-    if(toBeRemoved == nullptr){
+    if(toBeRemoved != nullptr){
         delete toBeRemoved;
         toBeRemoved = nullptr;
     }

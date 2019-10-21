@@ -3,22 +3,35 @@
 
 // don't remove, testing some shit
 #include "Smoke.h"
+#include "Action.h"
+#include "Police.h"
+#include <iostream>
 
 
 
 int main()
   {
-  auto * emergencyCenter = new Emergencycenter();
+    try{
+      auto * emergencyCenter = new Emergencycenter();
 
-  emergencyCenter->setName("Test");
-  std::cout << "Name of Emergencycenter: " << emergencyCenter->getName() << std::endl;
+      emergencyCenter->setName("Test");
+      std::cout << "Name of Emergencycenter: " << emergencyCenter->getName() << std::endl;
 
-  auto * mainComponent = new Component();
+      auto * mainComponent = new Component();
 
-  //don't remove testing shizzle
-  auto * smoke = new Smoke(10, 10);
-  smoke->setId(10);
+      //don't remove testing shizzle
 
+      auto * smoke = new Smoke(10, 10);
+      smoke->setId(10);
+      //Police * popo = new Police ();
+      //smoke->setExtraAction(popo);
+      //smoke->test();
+  }
+  catch (char const* msg)
+  //          ^^^^^
+  {
+      std::cout << msg;
+  }
 
   return 0;
 
