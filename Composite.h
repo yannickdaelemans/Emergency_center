@@ -5,7 +5,7 @@
 #include <vector>
 #include "Component.h"
 
-class Composite : Component {
+class Composite : public Component {
 
 public:
     Composite(const std::string & location);
@@ -18,9 +18,11 @@ public:
 	void activate();
 	void deactivate();
 
-    void setChildren(std::vector<Component*> children);
+    void setChild(Component* child);
     void setLocation(std::string location);
 
+    Component* getParent();
+    void setParent(Component* parent);
 
     std::vector<Component*> getChildren();
     std::string getLocation();
@@ -28,7 +30,8 @@ public:
 
 private:
     std::string location;
-
+    Component* parent;
+    std::vector<Component*> children;
 };
 
 #endif

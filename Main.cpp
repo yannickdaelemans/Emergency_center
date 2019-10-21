@@ -17,12 +17,19 @@ int main()
       emergencyCenter->setName("Test");
       std::cout << "Name of Emergencycenter: " << emergencyCenter->getName() << std::endl;
 
-      auto * mainComponent = new Component();
+      auto * mainComposite = new Component();
+      emergencyCenter->setMainComposite(mainComposite);
+
+      auto * smokesensor = new Smoke(10, 10);
+      emergencyCenter->addComponent(mainComposite,smokesensor);
+
+      emergencyCenter->getInfo();
+
 
       //don't remove testing shizzle
 
-      auto * smoke = new Smoke(10, 10);
-      smoke->setId(10);
+      //auto * smoke = new Smoke(10, 10);
+      //smoke->setId(10);
       //Police * popo = new Police ();
       //smoke->setExtraAction(popo);
       //smoke->test();

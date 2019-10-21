@@ -1,32 +1,23 @@
 #include "Component.h"
 
-Component::Component(int int_id) {
-	// TODO - implement Component::Component
-	throw "Not yet implemented";
+Component::Component(Component* newParent): parent{newParent} {
+    std::cout << "new component created" << std::endl;
 }
 
 Component::Component() {
-
+    std::cout << "new component created" << std::endl;
 }
 
-int Component::getId() {
-	// TODO - implement Component::getId
-	throw "Not yet implemented";
-}
-
-void Component::setId(int id) {
-	// TODO - implement Component::setId
-	throw "Not yet implemented";
+Component::~Component(){
+    std::cout << "destructing component" << std::endl;
 }
 
 void Component::addComponent(Component* toBeAdded) {
-	// TODO - implement Component::addComponent
-	throw "Not yet implemented";
+
 }
 
 void Component::removeComponent(Component* toBeRemoved) {
-	// TODO - implement Component::removeComponent
-	throw "Not yet implemented";
+    delete toBeRemoved;
 }
 
 void Component::test() {
@@ -44,9 +35,17 @@ void Component::deactivate() {
 	throw "Not yet implemented";
 }
 
-std::string Component::getInfo() {
+void Component::getInfo() {
 	// TODO - implement Component::getInfo
 	throw "Not yet implemented";
+}
+
+Component* Component::getParent(){
+
+}
+
+void Component::setParent(Component* parent){
+
 }
 
 /*

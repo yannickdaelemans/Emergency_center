@@ -93,3 +93,11 @@ void Sensor::getInfo() {
         cout<< "This sensor is deactivated"<< endl;
     }
 }
+
+Component* Sensor::getParent(){
+    return this->parent;
+}
+
+void Sensor::setParent(Component* newParent){
+    this->parent = newParent;
+}

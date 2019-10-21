@@ -17,23 +17,24 @@ private:
 public:
     Sensor(int id);
 
-    void removeComponent(Component* toBeRemoved);
+    void removeComponent(Component* toBeRemoved) override;
 
-	void test();
-	void activate();
-	void deactivate();
+    void test() override;
+    void activate() override;
+    void deactivate() override;
 
 
     void setId(int id);
     void setListActions(std::vector<Action*> extraActions);
     void setExtraAction (Action* action);
     void setVendor(std::string vendor);
+    void setParent(Component *parent) override;
 
     std::vector<Action*> getActions();
     int getId();
     std::string getVendor();
-    void getInfo();
-
+    void getInfo() override;
+    Component * getParent() override;
 
 };
 

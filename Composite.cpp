@@ -1,16 +1,15 @@
 #include "Composite.h"
 
-Composite::Composite(const std::string& location) {
-	// TODO - implement Composite::Composite
-	throw "Not yet implemented";
+Composite::Composite(const std::string& aLocation): location{aLocation} {
+    std::cout << "new Composite created" << std::endl;
 }
 
 std::string Composite::getLocation() {
 	return this->location;
 }
 
-void Composite::setLocation(std::string location) {
-	this->location = location;
+void Composite::setLocation(std::string newLocation) {
+    this->location = newLocation;
 }
 
 std::vector<Component*> Composite::getChildren() {
@@ -18,14 +17,13 @@ std::vector<Component*> Composite::getChildren() {
 	throw "Not yet implemented";
 }
 
-void Composite::setChildren(std::vector<Component*> children) {
-	// TODO - implement Composite::setChildren
-	throw "Not yet implemented";
+void Composite::setChild(Component* child) {
+    children.push_back(child);
 }
 
 void Composite::addComponent(Component* toBeAdded) {
-	// TODO - implement Composite::addComponent
-	throw "Not yet implemented";
+    toBeAdded->setParent(this);
+    this->setChild(toBeAdded);
 }
 
 void Composite::removeComponent(Component* toBeRemoved) {
@@ -49,6 +47,18 @@ void Composite::deactivate() {
 }
 
 void Composite::getInfo() {
-	// TODO - implement Composite::getInfo
-	throw "Not yet implemented";
+    std::cout << "Info about the Composite:" << std::endl;
+    std::cout << "location: "<< this->location << std::endl;
+    std::cout << "Children: "<< std::endl;
+    for (Component* child : children){
+        child->getInfo();
+    }
+}
+
+Component* Composite::getParent(){
+    return this->parent;
+}
+
+void Composite::setParent(Component* newParent){
+    this->parent = newParent;
 }
