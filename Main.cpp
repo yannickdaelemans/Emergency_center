@@ -23,7 +23,7 @@ int main()
 
       auto * smoke = new Smoke(10, 10);
       smoke->setId(10);
-      //Police * popo = new Police ();
+      Police * popo = new Police ();
       //smoke->setExtraAction(popo);
       //smoke->test();
   }
