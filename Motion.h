@@ -10,7 +10,7 @@ private:
 	int maxDistance;
 
 public:
-    Motion(int id, int minDistance, int maxDistance);
+    Motion(int minDistance, int maxDistance);
 
     int getMinDistance();
 	void setMinDistance(int minDistance);

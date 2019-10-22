@@ -17,19 +17,19 @@ int main()
     try{
       auto emergencyCenter = std::make_unique<Emergencycenter>("Name Emergencycenter");
 
-      auto * mainComposite = new Composite(1, "Main");
+      auto * mainComposite = new Composite("Main");
       emergencyCenter->setMainComposite(mainComposite);
 
-      auto * smokesensor = new Smoke(9, 10);
+      auto * smokesensor = new Smoke(10);
       emergencyCenter->addComponent(mainComposite,smokesensor);
-      auto * smokesensor1 = new Smoke(10, 10);
+      auto * smokesensor1 = new Smoke(10);
       emergencyCenter->addComponent(mainComposite,smokesensor1);
-      auto * smokesensor2 = new Smoke(11, 10);
+      auto * smokesensor2 = new Smoke(10);
       emergencyCenter->addComponent(mainComposite,smokesensor2);
 
-      auto * groupT = new Composite(2, "group T");
+      auto * groupT = new Composite("group T");
       emergencyCenter->addComponent(mainComposite,groupT);
-      auto * motionsensor = new Motion(3, 2, 20);
+      auto * motionsensor = new Motion(2, 20);
       emergencyCenter->addComponent(groupT, motionsensor);
 
       emergencyCenter->getInfo();
@@ -39,14 +39,13 @@ int main()
 
       //don't remove testing shizzle
       std::cout<< "Testing the Actions"<< std::endl;
-      auto * smoke = new Smoke(10, 10);
+      auto * smoke = new Smoke(10);
       smoke->setId(15);
       auto popo = new Police();
       smoke->setExtraAction(popo);
       smoke->test();
   }
   catch (char const* msg)
-  //          ^^^^^
   {
       std::cout << msg;
   }

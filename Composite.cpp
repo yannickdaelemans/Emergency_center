@@ -1,8 +1,6 @@
 #include "Composite.h"
 
-Composite::Composite(int id, const std::string& aLocation): location{aLocation} {
-    this->setId(id);
-}
+Composite::Composite(const std::string& aLocation): location{aLocation} {}
 
 std::string Composite::getLocation() {
 	return this->location;

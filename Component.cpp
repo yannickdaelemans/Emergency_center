@@ -18,7 +18,9 @@ void Component::removeComponent() {}
 
 int Component::getId() {}
 
-void Component::setId(int newId) {}
+void Component::setId(int newId) {
+    id = newId;
+}
 
 void Component::test() {
 	// TODO - implement Component::test

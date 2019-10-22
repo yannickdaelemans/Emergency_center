@@ -7,8 +7,7 @@ using namespace std;
  * * getInfo: make sure all the actions are in their as well, need to make methods inside the actions
  * * make sure you don't need to give through an extra ID
 */
-Sensor::Sensor(int id) {
-    this->id = id;
+Sensor::Sensor() {
     activated = false;
 }
 

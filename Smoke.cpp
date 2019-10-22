@@ -1,6 +1,6 @@
 #include "Smoke.h"
 
-Smoke::Smoke(int id, int sensitivity):Sensor(id) {
+Smoke::Smoke(int sensitivity):Sensor() {
     this->sensitivity = sensitivity;
 }
 

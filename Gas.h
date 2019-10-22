@@ -6,7 +6,7 @@
 class Gas : public Sensor {
 
 public:
-	Gas(int int_id, int int_threshold);
+    Gas(int int_threshold);
 
     int getTreshold();
 	void setTreshold(int treshold);

@@ -14,7 +14,7 @@ private:
     std::string vendor;
 
 public:
-    Sensor(int id);
+    Sensor();
 
     void removeComponent() override;
 

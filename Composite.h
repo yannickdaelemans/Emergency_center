@@ -10,7 +10,7 @@
 class Composite : public Component {
 
 public:
-    Composite(int id, const std::string & location);
+    Composite(const std::string & location);
 
     void addComponent(Component* toBeAdded) override;
     void removeComponent() override;

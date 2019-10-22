@@ -1,6 +1,6 @@
 #include "Gas.h"
 
-Gas::Gas(int id, int treshold):Sensor(id) {
+Gas::Gas(int treshold):Sensor() {
     this->treshold = treshold;
 }
 

@@ -22,6 +22,8 @@ void Emergencycenter::setName(std::string newName) {
 
 void Emergencycenter::addComponent(Component* addedTo, Component* toBeAdded) {
     addedTo->addComponent(toBeAdded);
+    int id = getFreeId();
+    toBeAdded->setId(id);
 }
 
 void Emergencycenter::test(Component* Component) {
@@ -65,3 +67,22 @@ Component* Emergencycenter::getMainComposite(){
     return this->mainComposite;
 }
 
+int Emergencycenter::getFreeId (){
+    int freeId = rand() % 100000;
+    while(checkIfIdExists(freeId)){
+        freeId = rand() % 100000;
+    }
+    return freeId;
+}
+
+bool Emergencycenter::checkIfIdExists (int id){
+    if (ID.size() > 100000){
+        throw "Too much ID's";
+    }
+    for(size_t i = 0; i < ID.size(); i++){
+        if(id == ID[i]){
+            return  true;
+        }
+    }
+    return false;
+}

@@ -4,7 +4,9 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <algorithm>
 #include <memory>
+#include <random>
 
 #include "Component.h"
 
@@ -37,6 +39,11 @@ class Emergencycenter
     private:
         std::string name;
         Component* mainComposite;
+        std::vector<int> ID;
+
+        std::vector<std::string> getAllVendors(std::vector<Component*> sensors);
+        int getFreeId ();
+        bool checkIfIdExists (int id);
 };
 
 #endif
