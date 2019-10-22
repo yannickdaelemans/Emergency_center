@@ -27,3 +27,4 @@ SOURCES += \
     SortSensorID.cpp \
     SortSensorType.cpp \
     Main.cpp
+CONFIG += c++14

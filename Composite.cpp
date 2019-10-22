@@ -1,7 +1,7 @@
 #include "Composite.h"
 
-Composite::Composite(const std::string& aLocation): location{aLocation} {
-    std::cout << "new Composite created" << std::endl;
+Composite::Composite(int id, const std::string& aLocation): location{aLocation} {
+    this->setId(id);
 }
 
 std::string Composite::getLocation() {
@@ -20,16 +20,12 @@ void Composite::setChild(Component* child) {
     children.push_back(child);
 }
 
-void Composite::removeChild(Component* toBeRemovedChild){
-    for (Component* child : children){
-        int i=0;
-        if(child == toBeRemovedChild){
-            children.erase(children.begin()+i);
-            break;
-        }else {
-            i++;
-        }
-    }
+int Composite::getId() {
+    return this->id;
+}
+
+void Composite::setId(int newId) {
+    this->id = newId;
 }
 
 void Composite::addComponent(Component* toBeAdded) {
@@ -42,7 +38,6 @@ void Composite::removeComponent() {
         child->removeComponent();
         std::cout << "removing child" << std::endl;
     }
-    parent->removeChild(this);
     this->~Composite();
 }
 
@@ -76,3 +71,12 @@ Component* Composite::getParent(){
 void Composite::setParent(Component* newParent){
     this->parent = newParent;
 }
+
+std::string Composite::getType(){
+    return "Composite";
+}
+
+bool Composite::operator==(Component & otherComponent) {
+    return (id == otherComponent.getId());
+}
+

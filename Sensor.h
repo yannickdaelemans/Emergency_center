@@ -9,7 +9,6 @@
 class Sensor : public Component {
 
 private:
-    int id;
     std::vector<Action*> actions;
     bool activated;
     std::string vendor;
@@ -24,19 +23,20 @@ public:
     void deactivate() override;
 
 
-    void setId(int id);
+    void setId(int id) override;
     void setListActions(std::vector<Action*> extraActions);
     void setExtraAction (Action* action);
     void setVendor(std::string vendor);
     void setParent(Component *parent) override;
 
     std::vector<Action*> getActions();
-    int getId();
+    int getId() override;
     std::string getVendor();
     void getInfo() override;
     Component * getParent() override;
+    std::string getType() override;
 
-    void removeChild(Component* child) override;
+    bool operator==(Component & otherComponent) override;
 
 };
 

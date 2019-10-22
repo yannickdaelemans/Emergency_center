@@ -15,20 +15,25 @@ public:
 
     virtual void addComponent(Component* toBeAdded);
     virtual void removeComponent();
-    virtual void removeChild(Component* child);
 
     virtual void test();
     virtual void activate();
     virtual void deactivate();
 
     virtual void getInfo();
+    virtual std::string getType();
+    virtual int getId();
+    virtual void setId(int newId);
 
     virtual Component* getParent();
     virtual void setParent(Component* parent);
+
+    virtual bool operator==(Component & otherComponent);
     //std::ostream& operator<<(std::ostream& os, Component& component);
 
 
     Component* parent;
+    int id;
 };
 
 #endif

@@ -40,6 +40,8 @@ void Emergencycenter::deactivate(Component* component) {
 }
 
 void Emergencycenter::getInfo() {
+    std::cout << std::endl;
+    std::cout << "-----INFO-----: " << std::endl;
     std::cout << "Name of Emergencycenter: " << this->getName() << std::endl;
     Component* mainComposite = this->mainComposite;
     mainComposite->getInfo();

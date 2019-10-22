@@ -102,9 +102,11 @@ void Sensor::setParent(Component* newParent){
     this->parent = newParent;
 }
 
-void Sensor::removeChild(Component* child){
-    if (child != nullptr){
-        delete child;
-    }
+std::string Sensor::getType(){
+    return "Sensor";
+}
+
+bool Sensor::operator==(Component & otherComponent) {
+    return (id == otherComponent.getId());
 }
 

@@ -17,7 +17,7 @@ int main()
     try{
       auto emergencyCenter = std::make_unique<Emergencycenter>("Name Emergencycenter");
 
-      auto * mainComposite = new Composite("Main");
+      auto * mainComposite = new Composite(1, "Main");
       emergencyCenter->setMainComposite(mainComposite);
 
       auto * smokesensor = new Smoke(9, 10);
@@ -27,9 +27,9 @@ int main()
       auto * smokesensor2 = new Smoke(11, 10);
       emergencyCenter->addComponent(mainComposite,smokesensor2);
 
-      auto * groupT = new Composite("group T");
+      auto * groupT = new Composite(2, "group T");
       emergencyCenter->addComponent(mainComposite,groupT);
-      auto * motionsensor = new Motion(1, 2, 20);
+      auto * motionsensor = new Motion(3, 2, 20);
       emergencyCenter->addComponent(groupT, motionsensor);
 
       emergencyCenter->getInfo();

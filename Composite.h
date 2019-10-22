@@ -10,7 +10,7 @@
 class Composite : public Component {
 
 public:
-    Composite(const std::string & location);
+    Composite(int id, const std::string & location);
 
     void addComponent(Component* toBeAdded) override;
     void removeComponent() override;
@@ -23,13 +23,16 @@ public:
     void setChild(Component* child);
     void setLocation(std::string location);
     void setParent(Component* parent) override;
+    void setId(int newId) override;
 
     Component* getParent()override;
     std::vector<Component*> getChildren();
     std::string getLocation();
     void getInfo() override;
+    std::string getType() override;
+    int getId() override;
 
-    void removeChild(Component* child);
+    bool operator==(Component & otherComponent) override;
 
 private:
     std::string location;

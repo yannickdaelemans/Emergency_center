@@ -16,6 +16,10 @@ void Component::addComponent(Component* toBeAdded) {}
 
 void Component::removeComponent() {}
 
+int Component::getId() {}
+
+void Component::setId(int newId) {}
+
 void Component::test() {
 	// TODO - implement Component::test
 	throw "Not yet implemented";
@@ -37,7 +41,10 @@ Component* Component::getParent(){}
 
 void Component::setParent(Component* parent){}
 
-void Component::removeChild(Component* child){}
+std::string  Component::getType(){}
+
+bool Component::operator==(Component & otherComponent){}
+
 
 
 /*
