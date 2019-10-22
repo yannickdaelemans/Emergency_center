@@ -10,23 +10,25 @@ class Component {
 
 public:
     Component();
-	Component(int int_id);
+    virtual ~Component();
+    Component(Component* newParent);
 
-    void addComponent(Component* toBeAdded);
-    void removeComponent(Component* toBeRemoved);
+    virtual void addComponent(Component* toBeAdded);
+    virtual void removeComponent();
+    virtual void removeChild(Component* child);
 
-    void test();
-    void activate();
-    void deactivate();
+    virtual void test();
+    virtual void activate();
+    virtual void deactivate();
 
+    virtual void getInfo();
 
-    void setId(int id);
-
-    std::string getInfo();
-    int getId();
-
-
+    virtual Component* getParent();
+    virtual void setParent(Component* parent);
     //std::ostream& operator<<(std::ostream& os, Component& component);
+
+
+    Component* parent;
 };
 
 #endif

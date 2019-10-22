@@ -7,7 +7,7 @@ class Action {
 
 
 public:
-	Action();
+    Action(void);
     virtual void acting();
     virtual ~Action() = 0;
 };

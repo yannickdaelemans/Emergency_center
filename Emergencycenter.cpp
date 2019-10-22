@@ -8,6 +8,10 @@ Emergencycenter::Emergencycenter() {
     std::cout << "new emergencycenter created" << std::endl;
 }
 
+Emergencycenter::~Emergencycenter(){
+    std::cout << "deleted emergencycenter" << std::endl;
+}
+
 std::string Emergencycenter::getName() {
 	return this->name;
 }
@@ -16,14 +20,8 @@ void Emergencycenter::setName(std::string newName) {
     this->name = newName;
 }
 
-void Emergencycenter::addComponent(Component* addedTo, Component toBeAdded) {
-	// TODO - implement Emergency center::addComponent
-	throw "Not yet implemented";
-}
-
-void Emergencycenter::removeComponent(Component* removeFrom, Component* toBeRemoved) {
-	// TODO - implement Emergency center::removeComponent
-	throw "Not yet implemented";
+void Emergencycenter::addComponent(Component* addedTo, Component* toBeAdded) {
+    addedTo->addComponent(toBeAdded);
 }
 
 void Emergencycenter::test(Component* Component) {
@@ -41,9 +39,10 @@ void Emergencycenter::deactivate(Component* component) {
 	throw "Not yet implemented";
 }
 
-void Emergencycenter::getInfo(Component* Component) {
-	// TODO - implement Emergency center::getInfo
-	throw "Not yet implemented";
+void Emergencycenter::getInfo() {
+    std::cout << "Name of Emergencycenter: " << this->getName() << std::endl;
+    Component* mainComposite = this->mainComposite;
+    mainComposite->getInfo();
 }
 
 std::vector<Component*> Emergencycenter::sortOnId(std::vector<Component*> sensors) {
@@ -55,3 +54,12 @@ std::vector<Component*> Emergencycenter::sortOnType(std::vector<Component*> sens
 	// TODO - implement Emergency center::sortOnType
 	throw "Not yet implemented";
 }
+
+void Emergencycenter::setMainComposite(Component* newMainComposite){
+    this->mainComposite = newMainComposite;
+}
+
+Component* Emergencycenter::getMainComposite(){
+    return this->mainComposite;
+}
+

@@ -4,9 +4,8 @@ using namespace std;
 
 /*
  * Things in this class still to check/do:
- * * removeComponent: not really happy with it
  * * getInfo: make sure all the actions are in their as well, need to make methods inside the actions
- * * extra method removing actions
+ * * make sure you don't need to give through an extra ID
 */
 Sensor::Sensor(int id) {
     this->id = id;
@@ -43,15 +42,16 @@ void Sensor::setVendor(std::string newVendor) {
     this->vendor = newVendor;
 }
 
-void Sensor::removeComponent(Component* toBeRemoved) {
+void Sensor::removeComponent() {
     //don't think this is all that good
-    if(toBeRemoved != nullptr){
-        delete toBeRemoved;
-        toBeRemoved = nullptr;
+    /*
+    if(this != nullptr){
+        delete this;
     }
     else {
         cout << "Can not delete this, it has already been deleted." << endl;
-    }
+    }*/
+    this->~Sensor();
 }
 
 void Sensor::test() {
@@ -93,3 +93,18 @@ void Sensor::getInfo() {
         cout<< "This sensor is deactivated"<< endl;
     }
 }
+
+Component* Sensor::getParent(){
+    return this->parent;
+}
+
+void Sensor::setParent(Component* newParent){
+    this->parent = newParent;
+}
+
+void Sensor::removeChild(Component* child){
+    if (child != nullptr){
+        delete child;
+    }
+}
+

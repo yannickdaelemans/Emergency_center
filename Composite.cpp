@@ -1,36 +1,49 @@
 #include "Composite.h"
 
-Composite::Composite(const std::string& location) {
-	// TODO - implement Composite::Composite
-	throw "Not yet implemented";
+Composite::Composite(const std::string& aLocation): location{aLocation} {
+    std::cout << "new Composite created" << std::endl;
 }
 
 std::string Composite::getLocation() {
 	return this->location;
 }
 
-void Composite::setLocation(std::string location) {
-	this->location = location;
+void Composite::setLocation(std::string newLocation) {
+    this->location = newLocation;
 }
 
 std::vector<Component*> Composite::getChildren() {
-	// TODO - implement Composite::getChildren
-	throw "Not yet implemented";
+    return this->children;
 }
 
-void Composite::setChildren(std::vector<Component*> children) {
-	// TODO - implement Composite::setChildren
-	throw "Not yet implemented";
+void Composite::setChild(Component* child) {
+    children.push_back(child);
+}
+
+void Composite::removeChild(Component* toBeRemovedChild){
+    for (Component* child : children){
+        int i=0;
+        if(child == toBeRemovedChild){
+            children.erase(children.begin()+i);
+            break;
+        }else {
+            i++;
+        }
+    }
 }
 
 void Composite::addComponent(Component* toBeAdded) {
-	// TODO - implement Composite::addComponent
-	throw "Not yet implemented";
+    toBeAdded->setParent(this);
+    this->setChild(toBeAdded);
 }
 
-void Composite::removeComponent(Component* toBeRemoved) {
-	// TODO - implement Composite::removeComponent
-	throw "Not yet implemented";
+void Composite::removeComponent() {
+    for (Component* child : children){
+        child->removeComponent();
+        std::cout << "removing child" << std::endl;
+    }
+    parent->removeChild(this);
+    this->~Composite();
 }
 
 void Composite::test() {
@@ -49,6 +62,17 @@ void Composite::deactivate() {
 }
 
 void Composite::getInfo() {
-	// TODO - implement Composite::getInfo
-	throw "Not yet implemented";
+    std::cout << "Info about the composite at location:" << this->location << std::endl;
+    std::cout << "Children: "<< std::endl;
+    for (Component* child : children){
+        child->getInfo();
+    }
+}
+
+Component* Composite::getParent(){
+    return this->parent;
+}
+
+void Composite::setParent(Component* newParent){
+    this->parent = newParent;
 }

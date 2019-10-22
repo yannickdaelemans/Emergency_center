@@ -1,9 +1,6 @@
 #include "Action.h"
 
-Action::Action() {
-	// TODO - implement Action::Action
-	throw "Not yet implemented";
-}
+Action::Action(void) {}
 
 void Action::acting() {
     std::cout<< "The sensor is triggered" << std::endl;

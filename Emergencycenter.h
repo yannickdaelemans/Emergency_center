@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <memory>
 
 #include "Component.h"
 
@@ -15,13 +16,12 @@ class Emergencycenter
         Emergencycenter();
         ~Emergencycenter();
 
-        void addComponent(Component* addedTo, Component toBeAdded);
-        void removeComponent(Component* removeFrom, Component* toBeRemoved);
+        void addComponent(Component* addedTo, Component* toBeAdded);
 
         void test(Component* Component);
         void activate(Component* Component);
         void deactivate(Component* Component);
-        void getInfo(Component* Component);
+        void getInfo();
 
         std::vector<Component*> sortOnId(std::vector<Component*> sensors);
         std::vector<Component*> sortOnType(std::vector<Component*> sensors);
@@ -30,10 +30,13 @@ class Emergencycenter
         void setName(std::string name);
         std::string getName();
 
+        void setMainComposite(Component* mainComposite);
+        Component* getMainComposite();
+
 
     private:
-
         std::string name;
+        Component* mainComposite;
 };
 
 #endif
