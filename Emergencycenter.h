@@ -20,7 +20,7 @@ class Emergencycenter
 
         void addComponent(Component* addedTo, Component* toBeAdded);
 
-        void test(Component* Component);
+        void test(Component* component);
         void activate(Component* Component);
         void deactivate(Component* Component);
         void getInfo();

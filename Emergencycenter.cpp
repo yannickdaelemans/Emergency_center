@@ -26,19 +26,16 @@ void Emergencycenter::addComponent(Component* addedTo, Component* toBeAdded) {
     toBeAdded->setId(id);
 }
 
-void Emergencycenter::test(Component* Component) {
-	// TODO - implement Emergency center::test
-	throw "Not yet implemented";
+void Emergencycenter::test(Component* component) {
+    component->test();
 }
 
 void Emergencycenter::activate(Component* component) {
-	// TODO - implement Emergency center::activate
-	throw "Not yet implemented";
+    component->activate();
 }
 
 void Emergencycenter::deactivate(Component* component) {
-	// TODO - implement Emergency center::deactivate
-	throw "Not yet implemented";
+    component->deactivate();
 }
 
 void Emergencycenter::getInfo() {
@@ -50,13 +47,26 @@ void Emergencycenter::getInfo() {
 }
 
 std::vector<Component*> Emergencycenter::sortOnId(std::vector<Component*> sensors) {
-	// TODO - implement Emergency center::sortOnId
-	throw "Not yet implemented";
+    std::vector<Component*> listSensors;
+    std::sort(ID.begin(), ID.end());
+    for(size_t i = 0; i<sensors.size(); i++){
+        for(size_t j = 0; j<ID.size(); j++){
+            if(sensors[i]->getId()==ID[j] && sensors[i]->getType()=="Sensor"){
+                listSensors.push_back(sensors[i]);
+            }
+        }
+    }
+    return listSensors;
 }
 
 std::vector<Component*> Emergencycenter::sortOnType(std::vector<Component*> sensors) {
-	// TODO - implement Emergency center::sortOnType
-	throw "Not yet implemented";
+    std::vector<Component*> listSensors;
+    for(size_t j = 0; j<sensors.size(); j++){
+        if(sensors[j]->getType()=="Sensors"){
+            listSensors.push_back(sensors[j]);
+        }
+    }
+    return listSensors;
 }
 
 void Emergencycenter::setMainComposite(Component* newMainComposite){
