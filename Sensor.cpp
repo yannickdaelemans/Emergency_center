@@ -122,3 +122,14 @@ ostream& operator<<(ostream& os, const Sensor& component) {
     os << endl;
     return os;
 }
+
+void Sensor::operator++(){
+    activate();
+}
+
+void Sensor::operator--(){
+    deactivate();
+}
+
+
+

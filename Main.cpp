@@ -36,8 +36,11 @@ int main()
       groupT->removeComponent();
       //emergencyCenter->getInfo();
 
+      ++ *smokesensor;
+
       std::cout << *smokesensor;
 
+      -- *smokesensor;
 
       //don't remove testing shizzle
       std::cout<< "Testing the Actions"<< std::endl;

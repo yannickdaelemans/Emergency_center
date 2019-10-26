@@ -41,6 +41,8 @@ public:
     bool operator==(Component & otherComponent) override;
     //void operator<<(Component & otherComponent) override;
     friend ostream& operator<<(ostream &os, const Sensor & component);
+    void operator++();
+    void operator--();
 
 };
 
