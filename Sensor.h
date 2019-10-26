@@ -37,6 +37,8 @@ public:
     std::string getType() override;
 
     bool operator==(Component & otherComponent) override;
+    void operator<<(Component & otherComponent) override;
+
 
 };
 

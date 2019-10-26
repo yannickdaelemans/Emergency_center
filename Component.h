@@ -29,6 +29,7 @@ public:
     virtual void setParent(Component* parent);
 
     virtual bool operator==(Component & otherComponent);
+    virtual void operator<<(Component & component);
     //std::ostream& operator<<(std::ostream& os, Component& component);
 
 

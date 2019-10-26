@@ -47,7 +47,7 @@ std::string  Component::getType(){}
 
 bool Component::operator==(Component & otherComponent){}
 
-
+void Component::operator<<(Component & component){}
 
 /*
 std::ostream& Component::operator<<(std::ostream& os, Component& component) {
