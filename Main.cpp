@@ -32,9 +32,11 @@ int main()
       auto * motionsensor = new Motion(2, 20);
       emergencyCenter->addComponent(groupT, motionsensor);
 
-      emergencyCenter->getInfo();
+      //emergencyCenter->getInfo();
       groupT->removeComponent();
-      emergencyCenter->getInfo();
+      //emergencyCenter->getInfo();
+
+      std::cout << *smokesensor;
 
 
       //don't remove testing shizzle
@@ -44,6 +46,7 @@ int main()
       auto popo = new Police();
       smoke->setExtraAction(popo);
       smoke->test();
+
   }
   catch (char const* msg)
   {
@@ -51,35 +54,5 @@ int main()
   }
 
   return 0;
-
-
-
-  /*
-  Teacher *wouter, *danny;
-  Student *paul, *wen;
-  Course *statistics;
-
-  wouter = new Teacher("Peters", "Wouter", 2);
-  danny = new Teacher("Van Bever", "Danny", 1);
-  paul = new Student("Joe", "Paul", 25002563);
-  wen = new Student("Sun", "Wen", 998877665544332211);
-
-  statistics = new Course("Statistics", danny, 20);
-  statistics->setRoom("Aula");
-
-  administration->addPerson(wouter);
-  administration->addPerson(wen);
-  administration->addPerson(paul);
-  administration->addPerson(danny);
-  administration->addCourse(statistics);
-
-  danny->increaseSalary(20000.0f);
-
-  administration->addStudentToCourse(wen, statistics);
-  administration->addStudentToCourse(paul, statistics);
-
-  statistics->printInformation();
-  */
-
 
   }

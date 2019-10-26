@@ -49,4 +49,4 @@ bool Component::operator==(Component & otherComponent){}
 
 //void Component::operator<<(Component & component){}
 
-std::ostream& operator<<(std::ostream& os, Component& component) {}
+//std::ostream& operator<<(std::ostream& os, Component& component) {}

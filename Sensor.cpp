@@ -108,8 +108,17 @@ std::string Sensor::getType(){
 bool Sensor::operator==(Component & otherComponent) {
     return (id == otherComponent.getId());
 }
-
-std::ostream& operator<<(std::ostream& os, Component& component) {
-    component.getInfo();
+ostream& operator<<(ostream& os, const Sensor& component) {
+    os << endl;
+    os << "Info about the Sensor:" << endl;
+    os << "ID: "<< component.id << endl;
+    os << "Vendor: "<< component.vendor << endl;
+    if(component.activated){
+        os<< "This sensor is activated"<< endl;
+    }
+    else {
+        os<< "This sensor is deactivated"<< endl;
+    }
+    os << endl;
     return os;
 }

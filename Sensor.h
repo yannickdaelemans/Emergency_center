@@ -6,6 +6,8 @@
 #include <vector>
 #include <string>
 
+using namespace std;
+
 class Sensor : public Component {
 
 private:
@@ -38,7 +40,7 @@ public:
 
     bool operator==(Component & otherComponent) override;
     //void operator<<(Component & otherComponent) override;
-    friend std::ostream& operator<<(std::ostream& os, Component& component);
+    friend ostream& operator<<(ostream &os, const Sensor & component);
 
 };
 
