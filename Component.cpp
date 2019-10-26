@@ -47,11 +47,6 @@ std::string  Component::getType(){}
 
 bool Component::operator==(Component & otherComponent){}
 
-void Component::operator<<(Component & component){}
+//void Component::operator<<(Component & component){}
 
-/*
-std::ostream& Component::operator<<(std::ostream& os, Component& component) {
-	// TODO - implement Component::operator<<
-	throw "Not yet implemented";
-}
-*/
+std::ostream& operator<<(std::ostream& os, Component& component) {}

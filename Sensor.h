@@ -37,8 +37,8 @@ public:
     std::string getType() override;
 
     bool operator==(Component & otherComponent) override;
-    void operator<<(Component & otherComponent) override;
-
+    //void operator<<(Component & otherComponent) override;
+    friend std::ostream& operator<<(std::ostream& os, Component& component);
 
 };
 

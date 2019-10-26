@@ -109,6 +109,13 @@ bool Sensor::operator==(Component & otherComponent) {
     return (id == otherComponent.getId());
 }
 
+/*
 void Component::operator<<(Component & component){
-    return component.getInfo();
+    component.getInfo();
+}
+*/
+
+std::ostream& operator<<(std::ostream& os, Component& component) {
+    component.getInfo();
+    return os;
 }
