@@ -7,7 +7,7 @@ using namespace std;
  * * getInfo: make sure all the actions are in their as well, need to make methods inside the actions
  * * make sure you don't need to give through an extra ID
 */
-Sensor::Sensor() {
+Sensor::Sensor(const std::string & theType):vendor{"none"}, type{theType} {
     activated = false;
 }
 
@@ -82,15 +82,17 @@ void Sensor::deactivate() {
 }
 
 void Sensor::getInfo() {
-    cout << "Info about the Sensor:" << endl;
-    cout << "ID: "<< getId() << endl;
-    cout << "Vendor: "<< getVendor()<< endl;
+    cout << "\t" << "****Info about the Sensor:" << endl;
+    cout << "\t" << "Type: " << type << endl;
+    cout << "\t" << "ID: "<< id << endl;
+    cout << "\t" << "Vendor: "<< vendor << endl;
     if(activated){
-        cout<< "This sensor is activated"<< endl;
+        cout<< "\t" << "This sensor is activated"<< endl;
     }
     else {
-        cout<< "This sensor is deactivated"<< endl;
+        cout<< "\t" << "This sensor is deactivated"<< endl;
     }
+    cout << endl;
 }
 
 Component* Sensor::getParent(){
@@ -105,19 +107,28 @@ std::string Sensor::getType(){
     return "Sensor";
 }
 
-bool Sensor::operator==(Component & otherComponent) {
-    return (id == otherComponent.getId());
+std::string Sensor::getSensorType(){
+    return this->type;
 }
+
+
+std::vector<Component *> Sensor::getAllChildren(){
+    return {};
+}
+
+
+
+
 ostream& operator<<(ostream& os, const Sensor& component) {
-    os << endl;
-    os << "Info about the Sensor:" << endl;
-    os << "ID: "<< component.id << endl;
-    os << "Vendor: "<< component.vendor << endl;
+    os << "\t" << "Info about the Sensor:" << endl;
+    os << "\t" << "Type: " << component.type << endl;
+    os << "\t" << "ID: "<< component.id << endl;
+    os << "\t" << "Vendor: "<< component.vendor << endl;
     if(component.activated){
-        os<< "This sensor is activated"<< endl;
+        os<< "\t" << "This sensor is activated"<< endl;
     }
     else {
-        os<< "This sensor is deactivated"<< endl;
+        os<< "\t" << "This sensor is deactivated"<< endl;
     }
     os << endl;
     return os;

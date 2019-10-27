@@ -31,8 +31,9 @@ public:
     void getInfo() override;
     std::string getType() override;
     int getId() override;
+    std::vector<Component*> getAllChildren() override;
 
-    bool operator==(Component & otherComponent) override;
+    //bool operator==(Component & otherComponent) override;
 
 private:
     std::string location;

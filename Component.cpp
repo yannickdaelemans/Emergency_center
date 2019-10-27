@@ -1,15 +1,15 @@
 #include "Component.h"
 
 Component::Component(Component* newParent): parent{newParent} {
-    std::cout << "new component created" << std::endl;
+   // std::cout << "new component created" << std::endl;
 }
 
 Component::Component() {
-    std::cout << "new component created" << std::endl;
+    //std::cout << "new component created" << std::endl;
 }
 
 Component::~Component(){
-    std::cout << "destructing component" << std::endl;
+    //std::cout << "destructing component" << std::endl;
 }
 
 void Component::addComponent(Component* toBeAdded) {}
@@ -18,24 +18,13 @@ void Component::removeComponent() {}
 
 int Component::getId() {}
 
-void Component::setId(int newId) {
-    id = newId;
-}
+void Component::setId(int newId) {}
 
-void Component::test() {
-	// TODO - implement Component::test
-	throw "Not yet implemented";
-}
+void Component::test() {}
 
-void Component::activate() {
-	// TODO - implement Component::activate
-	throw "Not yet implemented";
-}
+void Component::activate() {}
 
-void Component::deactivate() {
-	// TODO - implement Component::deactivate
-	throw "Not yet implemented";
-}
+void Component::deactivate() {}
 
 void Component::getInfo() {}
 
@@ -45,7 +34,7 @@ void Component::setParent(Component* parent){}
 
 std::string  Component::getType(){}
 
-bool Component::operator==(Component & otherComponent){}
+std::vector<Component*> Component::getAllChildren(){}
 
 //void Component::operator<<(Component & component){}
 

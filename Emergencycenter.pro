@@ -9,9 +9,7 @@ HEADERS += \
     Motion.h \
     Police.h \
     Sensor.h \
-    Smoke.h \
-    SortSensorID.h \
-    SortSensorType.h
+    Smoke.h
 SOURCES += \
     Action.cpp \
     Component.cpp \
@@ -24,7 +22,5 @@ SOURCES += \
     Police.cpp \
     Sensor.cpp \
     Smoke.cpp \
-    SortSensorID.cpp \
-    SortSensorType.cpp \
     Main.cpp
 CONFIG += c++14

@@ -3,7 +3,7 @@
 
 #include <string>
 #include <iostream>
-
+#include <vector>
 
 class Component {
 
@@ -27,8 +27,10 @@ public:
 
     virtual Component* getParent();
     virtual void setParent(Component* parent);
+    virtual std::vector<Component*> getAllChildren();
 
-    virtual bool operator==(Component & otherComponent);
+
+    //virtual bool operator==(Component & otherComponent);
     //virtual void operator<<(Component & component);
     friend std::ostream& operator<<(std::ostream& os, Component& component);
 

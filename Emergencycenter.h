@@ -7,14 +7,15 @@
 #include <algorithm>
 #include <memory>
 #include <random>
+#include <cstring>
+#include <string.h>
 
 #include "Component.h"
+#include "Sensor.h"
 
 class Emergencycenter
 {
     public:
-
-        Emergencycenter(const std::string & name);
         Emergencycenter();
         ~Emergencycenter();
 
@@ -25,19 +26,15 @@ class Emergencycenter
         void deactivate(Component* Component);
         void getInfo();
 
-        std::vector<Component*> sortOnId(std::vector<Component*> sensors);
-        std::vector<Component*> sortOnType(std::vector<Component*> sensors);
-
-
-        void setName(std::string name);
-        std::string getName();
+        std::vector<Sensor*> sortOnId(std::vector<Component*> components);
+        std::vector<Sensor*> sortOnType(std::vector<Component*> components);
+        std::vector<Sensor*> sortOnVendor(std::vector<Component*> components);
 
         void setMainComposite(Component* mainComposite);
         Component* getMainComposite();
 
 
     private:
-        std::string name;
         Component* mainComposite;
         std::vector<int> ID;
 

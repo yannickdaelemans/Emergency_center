@@ -1,6 +1,6 @@
 #include "Motion.h"
 
-Motion::Motion(int minDistance, int maxDistance):Sensor() {
+Motion::Motion(int minDistance, int maxDistance):Sensor("Motion") {
     this->maxDistance = maxDistance;
     this->minDistance = minDistance;
 }

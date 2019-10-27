@@ -34,7 +34,6 @@ void Composite::addComponent(Component* toBeAdded) {
 void Composite::removeComponent() {
     for (Component* child : children){
         child->removeComponent();
-        std::cout << "removing child" << std::endl;
     }
     this->~Composite();
 }
@@ -74,7 +73,16 @@ std::string Composite::getType(){
     return "Composite";
 }
 
-bool Composite::operator==(Component & otherComponent) {
-    return (id == otherComponent.getId());
+std::vector<Component*> Composite::getAllChildren(){
+    std::vector<Component*> sensors;
+    for (Component* child : children){
+        if(child -> getType() == "Sensor"){
+            sensors.push_back(child);
+        } else {
+            std::vector<Component*> grandChildern = child->getAllChildren();
+            sensors.insert(sensors.end(), grandChildern.begin(), grandChildern.end());
+        }
+    }
+    return sensors;
 }
 

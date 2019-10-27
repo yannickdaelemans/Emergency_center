@@ -14,9 +14,10 @@ private:
     std::vector<Action*> actions;
     bool activated;
     std::string vendor;
+    std::string type;
 
 public:
-    Sensor();
+    Sensor(const std::string & type);
 
     void removeComponent() override;
 
@@ -37,9 +38,9 @@ public:
     void getInfo() override;
     Component * getParent() override;
     std::string getType() override;
+    std::string getSensorType();
+    std::vector<Component *> getAllChildren() override;
 
-    bool operator==(Component & otherComponent) override;
-    //void operator<<(Component & otherComponent) override;
     friend ostream& operator<<(ostream &os, const Sensor & component);
     void operator++();
     void operator--();
