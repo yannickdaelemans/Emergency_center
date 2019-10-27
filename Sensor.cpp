@@ -2,11 +2,6 @@
 
 using namespace std;
 
-/*
- * Things in this class still to check/do:
- * * getInfo: make sure all the actions are in their as well, need to make methods inside the actions
- * * make sure you don't need to give through an extra ID
-*/
 Sensor::Sensor(const std::string & theType):vendor{"none"}, type{theType} {
     activated = false;
 }
@@ -42,14 +37,6 @@ void Sensor::setVendor(std::string newVendor) {
 }
 
 void Sensor::removeComponent() {
-    //don't think this is all that good
-    /*
-    if(this != nullptr){
-        delete this;
-    }
-    else {
-        cout << "Can not delete this, it has already been deleted." << endl;
-    }*/
     this->~Sensor();
 }
 
@@ -112,7 +99,7 @@ std::string Sensor::getSensorType(){
 }
 
 
-std::vector<Component *> Sensor::getAllChildren(){
+std::vector<std::shared_ptr<Component>> Sensor::getAllChildren(){
     return {};
 }
 

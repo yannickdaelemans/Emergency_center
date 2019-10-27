@@ -77,16 +77,6 @@ int main()
          cout << *sensor;
       }
 
-      //emergencyCenter->getInfo();
-
-      //don't remove testing shizzle
-      std::cout<< "Testing the Actions"<< std::endl;
-      auto * smoke = new Smoke(10);
-      smoke->setId(15);
-      auto popo = new Police();
-      smoke->setExtraAction(popo);
-      smoke->test();
-
   }
   catch (char const* msg)
   {

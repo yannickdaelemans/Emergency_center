@@ -39,18 +39,12 @@ void Composite::removeComponent() {
 }
 
 void Composite::test() {
-	// TODO - implement Composite::test
-	throw "Not yet implemented";
 }
 
 void Composite::activate() {
-	// TODO - implement Composite::activate
-	throw "Not yet implemented";
 }
 
 void Composite::deactivate() {
-	// TODO - implement Composite::deactivate
-	throw "Not yet implemented";
 }
 
 void Composite::getInfo() {
