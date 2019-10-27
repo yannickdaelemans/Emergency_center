@@ -49,7 +49,7 @@ int main()
 
       ++ *smokesensor;
 
-      //std::cout << *smokesensor;
+      std::cout << *smokesensor;
 
       -- *smokesensor;
 

@@ -14,17 +14,17 @@ void Sensor::setId(int newId) {
     this->id = newId;
 }
 
-std::vector<Action*> Sensor::getActions() {
+std::vector<std::shared_ptr<Action>> Sensor::getActions() {
     return actions;
 }
 
-void Sensor::setListActions(std::vector<Action*> extraActions) {
+void Sensor::setListActions(std::vector<std::shared_ptr<Action>> extraActions) {
     for (size_t i = 0; i < extraActions.size(); i++){
         actions.push_back(extraActions[i]);
     }
 }
 
-void Sensor::setExtraAction (Action* action){
+void Sensor::setExtraAction (std::shared_ptr<Action> action){
     actions.push_back(action);
 }
 

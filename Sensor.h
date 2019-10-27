@@ -11,7 +11,7 @@ using namespace std;
 class Sensor : public Component {
 
 private:
-    std::vector<Action*> actions;
+    std::vector<std::shared_ptr<Action>> actions;
     bool activated;
     std::string vendor;
     std::string type;
@@ -27,12 +27,12 @@ public:
 
 
     void setId(int id) override;
-    void setListActions(std::vector<Action*> extraActions);
-    void setExtraAction (Action* action);
+    void setListActions(std::vector<std::shared_ptr<Action>> extraActions);
+    void setExtraAction (std::shared_ptr<Action> action);
     void setVendor(std::string vendor);
     void setParent(Component *parent) override;
 
-    std::vector<Action*> getActions();
+    std::vector<std::shared_ptr<Action>> getActions();
     int getId() override;
     std::string getVendor();
     void getInfo() override;
