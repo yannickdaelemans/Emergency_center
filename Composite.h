@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <typeinfo>
+#include <memory>
 
 #include "Component.h"
 
@@ -12,7 +13,7 @@ class Composite : public Component {
 public:
     Composite(const std::string & location);
 
-    void addComponent(Component* toBeAdded) override;
+    void addComponent(std::shared_ptr<Component> toBeAdded) override;
     void removeComponent() override;
 
     void test() override;
@@ -20,25 +21,25 @@ public:
     void activate() override;
     void deactivate() override;
 
-    void setChild(Component* child);
+    void setChild(std::shared_ptr<Component> child);
     void setLocation(std::string location);
     void setParent(Component* parent) override;
     void setId(int newId) override;
 
     Component* getParent()override;
-    std::vector<Component*> getChildren();
+    std::vector<std::shared_ptr<Component>> getChildren();
     std::string getLocation();
     void getInfo() override;
     std::string getType() override;
     int getId() override;
-    std::vector<Component*> getAllChildren() override;
+    std::vector<std::shared_ptr<Component>> getAllChildren() override;
 
     //bool operator==(Component & otherComponent) override;
 
 private:
     std::string location;
     Component* parent;
-    std::vector<Component*> children;
+    std::vector<std::shared_ptr<Component>> children;
 };
 
 #endif

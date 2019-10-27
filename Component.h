@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <memory>
 
 class Component {
 
@@ -13,7 +14,7 @@ public:
     virtual ~Component();
     Component(Component* newParent);
 
-    virtual void addComponent(Component* toBeAdded);
+    virtual void addComponent(std::shared_ptr<Component> toBeAdded);
     virtual void removeComponent();
 
     virtual void test();
@@ -27,7 +28,7 @@ public:
 
     virtual Component* getParent();
     virtual void setParent(Component* parent);
-    virtual std::vector<Component*> getAllChildren();
+    virtual std::vector<std::shared_ptr<Component>> getAllChildren();
 
 
     //virtual bool operator==(Component & otherComponent);

@@ -19,23 +19,23 @@ class Emergencycenter
         Emergencycenter();
         ~Emergencycenter();
 
-        void addComponent(Component* addedTo, Component* toBeAdded);
+        void addComponent(std::shared_ptr<Component> addedTo, std::shared_ptr<Component> toBeAdded);
 
         void test(Component* component);
         void activate(Component* Component);
         void deactivate(Component* Component);
         void getInfo();
 
-        std::vector<Sensor*> sortOnId(std::vector<Component*> components);
-        std::vector<Sensor*> sortOnType(std::vector<Component*> components);
-        std::vector<Sensor*> sortOnVendor(std::vector<Component*> components);
+        std::vector<std::shared_ptr<Sensor>> sortOnId(std::vector<std::shared_ptr<Component>> components);
+        std::vector<std::shared_ptr<Sensor>> sortOnType(std::vector<std::shared_ptr<Component>> components);
+        std::vector<std::shared_ptr<Sensor>> sortOnVendor(std::vector<std::shared_ptr<Component>> components);
 
-        void setMainComposite(Component* mainComposite);
-        Component* getMainComposite();
+        void setMainComposite(std::shared_ptr<Component> mainComposite);
+        std::shared_ptr<Component> getMainComposite();
 
 
     private:
-        Component* mainComposite;
+        std::shared_ptr<Component> mainComposite;
         std::vector<int> ID;
 
         std::vector<std::string> getAllVendors(std::vector<Component*> sensors);

@@ -12,7 +12,7 @@ Component::~Component(){
     //std::cout << "destructing component" << std::endl;
 }
 
-void Component::addComponent(Component* toBeAdded) {}
+void Component::addComponent(std::shared_ptr<Component> toBeAdded) {}
 
 void Component::removeComponent() {}
 
@@ -34,7 +34,7 @@ void Component::setParent(Component* parent){}
 
 std::string  Component::getType(){}
 
-std::vector<Component*> Component::getAllChildren(){}
+std::vector<std::shared_ptr<Component>> Component::getAllChildren(){}
 
 //void Component::operator<<(Component & component){}
 

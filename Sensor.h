@@ -39,7 +39,7 @@ public:
     Component * getParent() override;
     std::string getType() override;
     std::string getSensorType();
-    std::vector<Component *> getAllChildren() override;
+    std::vector<std::shared_ptr<Component>> getAllChildren() override;
 
     friend ostream& operator<<(ostream &os, const Sensor & component);
     void operator++();
