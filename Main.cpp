@@ -86,3 +86,14 @@ int main()
   return 0;
 
   }
+
+/*
+ * Solution to the question:
+ * We simulate the actions by activating the sensors from our application. In real situation it is the
+ * other way around: the sensors should activate the emergency center. Which techniques could
+ * you use to implement this? Which one will you use for this specific situation?
+ *
+ * In this case we could use a Design pattern called the "Command Pattern". This is an Object behavioral pattern in which
+ * the sender and receiver are decoupled by encapsulating a request as an object in and of itself. This lets you
+ * parameterize clients with different requests, queu or log requests. It can also be thought of as a call-bacl method.
+ */
